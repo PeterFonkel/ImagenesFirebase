@@ -1,6 +1,6 @@
 # Imagenes en Firebase
 
-Este proyecto contiene los componentes básicos para cargar, ver y gestinoar imagenes en firebase.
+Este proyecto contiene los componentes básicos para cargar, ver y gestionar imagenes en firebase.
 
 ## Configuración Firebase
 
