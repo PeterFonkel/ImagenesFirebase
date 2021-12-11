@@ -31,7 +31,7 @@ Estas claves son privadas. Añadir a gitignore antes de subir a github.
 Encargado de todas las funciones con Firebase.
 
 ### Ver Imágenes
-Componente de visualización de umagenes con un id común,
+Componente de visualización de imagenes con un id común.
 
 ### Gestionar Imágenes
 Subir/Editar/Eliminar imagenes con un id.
