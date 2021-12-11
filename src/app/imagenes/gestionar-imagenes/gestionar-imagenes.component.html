@@ -1,0 +1,40 @@
+<body class="m-4">
+    <div id="cargarImagenes" class="m-4">
+        <div>
+            <h4>Cargar una imagen</h4>
+            <form action="" id="uploader1" class="my-2">
+                <input type="file" id="file" (change)="seleccionarImagen($event)">
+            </form>
+        </div>
+        <button class="btn btn-primary" (click)="subirImagenPrincipal()">Subir Imagen</button>
+        <div *ngIf="imagenPrincipalASubir.nombre !== ''" class="container-fluid" id="imagenUnica">
+            <app-imagen [imagen]=imagenPrincipalASubir [id]=id (deselectImageEvent)="deseleccionarImagen($event)">
+            </app-imagen>
+        </div>
+        <hr>
+        <div>
+            <h4>Cargar varias Imagenes</h4>
+            <form action="" id="uploader2" class="my-2">
+                <input type="file" multiple="true" name="archivos[]" id="files" (change)="seleccionarImagenes($event)">
+            </form>
+            <button class="btn btn-primary" (click)="subirImagenesSecundarias()">Subir Imagenes</button>
+        </div>
+        <div class="container-fluid" id="imagenesVarias">
+            <div *ngFor="let imagen of imagenesSecundariasASubir" class="m-1 bucleFotografias" style="display: inline-block;">
+                <app-imagen [imagen]=imagen [id]=id (deselectImageEvent)="deseleccionarImagenes($event)"></app-imagen>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <h4>Imagen principal subidas a Firebase</h4>
+
+    <div *ngFor="let imagen of imagenPrincipalSubida" class="mt-2">
+        <app-imagen [imagen]=imagen (deselectImageEvent)="eliminarImagen($event)"></app-imagen>
+    </div>
+
+    <h4>Imagenes secundarias subidas a Firebase</h4>
+    <div *ngFor="let imagen of imagenesSecundariasSubidas" class="m-1" style="display: inline-block;">
+        <app-imagen [imagen]=imagen (deselectImageEvent)="eliminarImagen($event)"></app-imagen>
+    </div>
+</body>
